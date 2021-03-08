@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "661065580755",
+    "project_id": "restrobapp",
+    "storage_bucket": "restrobapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661065580755:android:017919c1580dc869e3d426",
+        "android_client_info": {
+          "package_name": "com.restrobapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "661065580755-jqi2e6eem1rdt460960ashj4efojdqgh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCU24d3l8RRZ0xR3TEXOq-Mb34q2zAbThs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "661065580755-jqi2e6eem1rdt460960ashj4efojdqgh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
