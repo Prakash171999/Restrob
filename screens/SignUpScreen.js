@@ -20,10 +20,10 @@ const SignUpScreen = ({navigation}) => {
   const [showLoading, setShowLoading] = useState(false);
 
   validateSignupFields = () => {
-    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(reg.test(email) === false){
-      Alert.alert("Invalid Email!")
-    }
+    // let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    // if(reg.test(email) === false){
+    //   Alert.alert("Invalid Email!")
+    // }
     if (email === '' || password === '') {
       Alert.alert('Please enter the empty fields!');
       return false;
@@ -62,7 +62,7 @@ const SignUpScreen = ({navigation}) => {
         <View style={styles.container}>
           <Text style={styles.signUpHeader}>Create your account </Text>
 
-          {/* <View style={styles.inputView}>
+          <View style={styles.inputView}>
             <TextInput
               style={styles.TextInput}
               placeholder="Username"
@@ -70,7 +70,7 @@ const SignUpScreen = ({navigation}) => {
               placeholderTextColor="#969696"
               onChangeText={(username) => setUsername(username)}
             />
-          </View> */}
+          </View>
 
           <View style={styles.inputView}>
             <TextInput

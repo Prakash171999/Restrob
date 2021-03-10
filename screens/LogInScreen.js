@@ -19,10 +19,10 @@ const LogInScreen = ({navigation}) => {
   const [showLoading, setShowLoading] = useState(false);
 
   validateLoginFields = () => {
-    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(reg.test(email) === false){
-      Alert.alert("Invalid Email!")
-    }
+    // let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    // if(reg.test(email) === false){
+    //   Alert.alert("Invalid Email!")
+    // }
     if (email === '' || password === '') {
       Alert.alert('Please enter the empty fields!');
       return false;
