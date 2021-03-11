@@ -28,6 +28,10 @@ const SignUpScreen = ({navigation}) => {
       Alert.alert('Wrong Input', 'Please check! Password does not match!');
       return false;
     }
+    else if (password.length < 8){
+      Alert.alert('Error','Password should be atleast 8 characters long')
+      return false;
+    }
     return true;
   };
 
