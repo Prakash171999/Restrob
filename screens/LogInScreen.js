@@ -17,19 +17,8 @@ const LogInScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showLoading, setShowLoading] = useState(false);
-  // const [formError, setFormError] = useState({
-  //   emailError: '',
-  //   password: '',
-  //   isError: false
-  // });
 
   validateLoginFields = () => {
-    // let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    // if (reg.test(email) === false) {
-    //   setFormError({isError: true});
-    //   setFormError({emailError: 'Error! Bad Email.'});
-    //   console.log(formError.emailError);
-    // }
     if (email === '' || password === '') {
       Alert.alert('Please enter the empty fields!');
       return false;
@@ -55,7 +44,10 @@ const LogInScreen = ({navigation}) => {
         setShowLoading(false);
         errorCode = e.code;
         console.log('errorCode:', errorCode);
-        if (errorCode === 'auth/wrong-password' || errorCode === 'auth/invalid-email') {
+        if (
+          errorCode === 'auth/wrong-password' ||
+          errorCode === 'auth/invalid-email'
+        ) {
           Alert.alert(
             'Invalid Credentials',
             'Wrong email/password combination.',
@@ -124,11 +116,6 @@ const LogInScreen = ({navigation}) => {
               onChangeText={(email) => setEmail(email)}
             />
           </View>
-          {/* {formError.isError &&(
-            <View>
-              <Text style={{color:'red'}}>{formError.emailError}</Text>
-            </View>
-          )} */}
           <View style={styles.inputView}>
             <TextInput
               style={styles.TextInput}

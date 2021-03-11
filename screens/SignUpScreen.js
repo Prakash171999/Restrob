@@ -18,13 +18,9 @@ const SignUpScreen = ({navigation}) => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showLoading, setShowLoading] = useState(false);
-
+ 
+  //Basic validations
   validateSignupFields = () => {
-    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (reg.test(email) === false) {
-      // setError('Invalid email!');
-    }
-
     if (email === '' || password === '') {
       Alert.alert('Empty Fields!', 'Fill the empty input fields!');
       return false;
@@ -35,6 +31,7 @@ const SignUpScreen = ({navigation}) => {
     return true;
   };
 
+  //Registering the users
   const register = async () => {
     if (validateSignupFields()) {
       setShowLoading(true);
@@ -50,7 +47,20 @@ const SignUpScreen = ({navigation}) => {
         }
       } catch (e) {
         setShowLoading(false);
-        Alert.alert(e.message);
+        errorCode = e.code;
+        console.log('errorCode:', errorCode);
+        if (
+          errorCode === 'auth/invalid-email'
+        ) {
+          Alert.alert(
+            'Bad Email',
+            'Email is badly formatted!',
+          );
+        } else if (errorCode === 'auth/email-already-in-use') {
+          Alert.alert('Register Error', 'The email is already in use!');
+        } else {
+          Alert.alert('Error', 'SignUp failed. Please try again!');
+        }
       }
     }
   };
@@ -82,6 +92,13 @@ const SignUpScreen = ({navigation}) => {
               onChangeText={(email) => setEmail(email)}
             />
           </View>
+          {/* {formError.isError && (
+            <View>
+              <Text style={{color: 'white', backgroundColor: 'black'}}>
+                {formError.emailError}
+              </Text>
+            </View>
+          )} */}
 
           <View style={styles.inputView}>
             <TextInput
